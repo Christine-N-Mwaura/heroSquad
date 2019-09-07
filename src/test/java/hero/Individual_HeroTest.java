@@ -17,19 +17,23 @@ public class Individual_HeroTest {
     }
 
     @Test
-    public void newHeroObjectIsCorrectlyCreated() throws Exception {
+    public void newHeroObjectIsCorrectlyCreated_true() throws Exception {
         Individual_Hero hero = setUpNewHero();
         assertEquals(true, hero instanceof Individual_Hero);
 
     }
 
     @Test
-    public void HeroInstantiateWithName_true() throws Exception {
+    public void HeroInstantiateWithName() throws Exception {
         Individual_Hero hero = setUpNewHero();
-        assertEquals(true,hero.getName());
+        assertEquals("Batman",hero.getName());
     }
 
-
+    @Test
+    public void HeroInstantiateWithAge () throws Exception {
+        Individual_Hero hero = setUpNewHero();
+        assertEquals(22,hero.getAge());
+    }
 
     public Individual_Hero setUpNewHero(){
         return new Individual_Hero("Batman",22);
