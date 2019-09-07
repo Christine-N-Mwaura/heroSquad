@@ -6,4 +6,12 @@ public class Individual_Hero {
     private int Age;
     private String specialPower;
     private String weakness;
+
+    public Individual_Hero(String name,int Age){
+        this.name = name;
+        this.Age = Age;
+
+
+    }
+
 }
