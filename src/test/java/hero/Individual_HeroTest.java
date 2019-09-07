@@ -17,9 +17,21 @@ public class Individual_HeroTest {
     }
 
     @Test
-    public void newHeroObjectIsCorrectlyCreated() {
-        Individual_Hero hero = new Individual_Hero("Batman");
+    public void newHeroObjectIsCorrectlyCreated() throws Exception {
+        Individual_Hero hero = setUpNewHero();
         assertEquals(true, hero instanceof Individual_Hero);
 
+    }
+
+    @Test
+    public void HeroInstantiateWithName_true() throws Exception {
+        Individual_Hero hero = setUpNewHero();
+        assertEquals(true,hero.getName());
+    }
+
+
+
+    public Individual_Hero setUpNewHero(){
+        return new Individual_Hero("Batman",22);
     }
 }
