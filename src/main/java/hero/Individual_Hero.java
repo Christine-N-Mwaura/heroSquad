@@ -17,4 +17,8 @@ public class Individual_Hero {
     public String getName() {
         return name;
     }
+
+    public int getAge() {
+        return Age;
+    }
 }
