@@ -9,7 +9,7 @@ public class Squad {
     private String mSquadCause;
     private static List<Squad> instances = new ArrayList<Squad>();
     private int mId;
-//    private List<Hero>myHeroes;
+    private List<Individual_Hero>mHeroes;
 
 
     public Squad(String squadName, int maxSize, String squadCause) {
@@ -18,6 +18,7 @@ public class Squad {
         this.mSquadCause = squadCause;
         instances.add(this);
         this.mId= instances.size();
+        mHeroes = new ArrayList<Individual_Hero>();
     }
 
     public int getId() {
@@ -46,5 +47,23 @@ public class Squad {
     }
     public static void clear(){
         instances.clear();
+    }
+
+    public List<Individual_Hero> getHeroes(){
+        return mHeroes;
+    }
+    public void addHero(Individual_Hero hero){
+        mHeroes.add(hero);
+    }
+    public static boolean heroAlreadyExists(Individual_Hero newHero){
+        boolean exists = false;
+        for(Squad squad : instances){
+            for(Individual_Hero hero : squad.getHeroes()){
+                if(hero.getName().equals(newHero.getName())){
+                    exists = true;
+                }
+            }
+        }
+        return exists;
     }
 }

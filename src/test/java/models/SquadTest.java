@@ -65,6 +65,21 @@ public class SquadTest {
 
     }
 
+    @Test
+    public void getHeroesInitiallyReturnsEmptyList() {
+        Squad.clear();
+        Squad mySquad = setUpNewSquad();
+        assertEquals(0,mySquad.getHeroes().size());
+    }
+
+    @Test
+    public void addHeroes_addsHeroToHeroList_true() {
+        Squad mySquad = setUpNewSquad();
+        Individual_Hero testHero = new Individual_Hero("Wonder Woman", 12,"speed" ,"sloths");
+        mySquad.addHero(testHero);
+        assertTrue(mySquad.getHeroes().contains(testHero));
+    }
+
     public Squad setUpNewSquad(){
         return new Squad("Justice League",7,"Fighting Evil");
     }
