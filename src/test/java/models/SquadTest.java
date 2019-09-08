@@ -14,12 +14,17 @@ public class SquadTest {
     }
 
     @Test
-    public void newsquadNameisinstantiated() {
+    public void newSquadNameIsInstantiated_String() {
         Squad mySquad = setUpNewSquad();
         assertEquals("Justice League", mySquad.getSquadName());
     }
 
+    @Test
+    public void newMaxSizeIsInstantiated_Int() {
+        Squad mySquad = setUpNewSquad();
+        assertEquals(7, mySquad.getMaxSize());
 
+    }
 
     public Squad setUpNewSquad(){
         return new Squad("Justice League",7,"Fighting Evil");
