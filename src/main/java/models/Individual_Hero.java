@@ -1,4 +1,4 @@
-package hero;
+package models;
 import java.util.Objects;
 public class Individual_Hero {
 

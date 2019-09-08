@@ -1,6 +1,6 @@
 package dao;
 
-import hero.Individual_Hero;
+import models.Individual_Hero;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

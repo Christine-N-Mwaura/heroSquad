@@ -1,6 +1,6 @@
 package dao;
 
-import hero.Individual_Hero;
+import models.Individual_Hero;
 import java.util.List;
 
 public interface heroDao {

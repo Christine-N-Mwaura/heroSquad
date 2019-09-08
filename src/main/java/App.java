@@ -1,9 +1,9 @@
-import hero.*;
 import static  spark.Spark.*;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import models.Individual_Hero;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
