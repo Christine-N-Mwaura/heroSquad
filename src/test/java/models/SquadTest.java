@@ -20,10 +20,16 @@ public class SquadTest {
     }
 
     @Test
-    public void newMaxSizeIsInstantiated_Int() {
+    public void newMaxSizeIsInstantiatedCorrectly_Int() {
         Squad mySquad = setUpNewSquad();
         assertEquals(7, mySquad.getMaxSize());
 
+    }
+
+    @Test
+    public void newSquadCauseIsInstantiatedCorrectly_String() {
+        Squad mySquad = setUpNewSquad();
+        assertEquals("Fighting Evil", mySquad.getSquadCause());
     }
 
     public Squad setUpNewSquad(){
