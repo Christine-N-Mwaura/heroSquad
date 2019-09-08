@@ -32,7 +32,42 @@ public class SquadTest {
         assertEquals("Fighting Evil", mySquad.getSquadCause());
     }
 
+    @Test
+    public void all_returnsAllSquadInstances_true() {
+        Squad firstSquad = setUpNewSquad();
+        Squad secondSquad = new Squad("Nerdies",22,"Computer Illetracy");
+        assertEquals(true,Squad.all().contains(firstSquad));
+        assertEquals(true,Squad.all().contains(secondSquad));
+
+
+    }
+
+    @Test
+    public void clear_clearsAllSquadsFromList_0() {
+        Squad mySquad = setUpNewSquad();
+        Squad.clear();
+        assertEquals(Squad.all().size(),0);
+    }
+
+    @Test
+    public void getId_squadsInstantiateWithIdOfOne_1() {
+        Squad.clear();
+        Squad mySquad = setUpNewSquad();
+        assertEquals(1,mySquad.getId());
+    }
+
+    @Test
+    public void find_getsSquadWithSpecifiedId_true() {
+        Squad.clear();
+        Squad firstSquad = setUpNewSquad();
+        Squad secondSquad = new Squad("nerdies",22,"computer Illiteracy");
+        assertEquals(Squad.findById(secondSquad.getId()),secondSquad);
+
+    }
+
     public Squad setUpNewSquad(){
         return new Squad("Justice League",7,"Fighting Evil");
     }
+
+
 }
