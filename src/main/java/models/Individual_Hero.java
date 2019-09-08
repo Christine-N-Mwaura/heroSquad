@@ -1,60 +1,53 @@
 package models;
-import java.util.Objects;
+
+import java.util.List;
+import java.util.ArrayList;
 public class Individual_Hero {
 
-    private String name;
-    private int Age;
-    private String specialPower;
-    private String weakness;
-    private int id;
+    private String mName;
+    private int mAge;
+    private String mSpecialPower;
+    private String mWeakness;
+    private int mId;
+    private static List<Individual_Hero> heroes = new ArrayList<Individual_Hero>();
 
 
 
-    public Individual_Hero(String name, int Age) {
-        this.name = name;
-        this.Age = Age;
-    }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Individual_Hero)) return false;
-       Individual_Hero hero = (Individual_Hero) o;
-        return getName() == hero.getName() &&
-                getId() == hero.getId() &&
-                Objects.equals(getName(), hero.getName());
-    }
-    @Override
-    public int hashCode(){
-        return Objects.hash(getName(), getAge(), getId());
+    public Individual_Hero(String name, int Age,String specialPower, String weakness) {
+        mName = name;
+        mAge = Age;
+        mSpecialPower = specialPower;
+        mWeakness = weakness;
+        heroes.add(this);
+        mId = heroes.size();
     }
 
-    public void setAge(int age) {
-        Age = age;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getName() {
-        return this.name;
+        return mName;
     }
 
     public int getAge() {
-        return this.Age;
+        return mAge;
     }
     public String getSpecialPower() {
-        return specialPower;
+        return mSpecialPower;
     }
 
     public String getWeakness() {
-        return weakness;
+        return mWeakness;
     }
     public int getId() {
-        return id;
+        return mId;
+    }
+    public static List<Individual_Hero> all(){
+        return heroes;
+    }
+    public static void clear(){
+        heroes.clear();
+    }
+    public static Individual_Hero findById(int id) {
+        return heroes.get(id - 1);
     }
 }
