@@ -8,7 +8,9 @@ public class Squad {
 
 
     public Squad (String squadName, int maxSize, String squadCause){
-
+      this.squadName = squadName;
+      this.maxSize = maxSize;
+      this.squadCause= squadCause;
     }
 
     public String getSquadName() {
