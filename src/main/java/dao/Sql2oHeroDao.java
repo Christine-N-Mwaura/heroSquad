@@ -19,6 +19,17 @@ public class Sql2oHeroDao implements heroDao{
 
     @Override
     public void add(Individual_Hero hero) {
+        String sql = "INSERT INTO heroes (name) VALUES (:name)";
+        try(Connection conn = sql2o.open()){
+            int id = (int) conn.createQuery(sql,true)
+                    .bind(hero)
+                    .executeUpdate()
+                    .getKey();
+            hero.setId(id);
+
+        }catch (Sql2oException ex){
+            System.out.println(ex);
+        }
 
     }
 
@@ -41,10 +52,6 @@ public class Sql2oHeroDao implements heroDao{
     public void clearAllHeroes() {
 
     }
-//    @Override
-//    public void add(Individual_Hero hero){
-//      String sql = "INSERT INTO heroes (name) VALUES (:name)";
-//    }
 
 
 

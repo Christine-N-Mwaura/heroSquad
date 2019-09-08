@@ -5,9 +5,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.sql2o.*;
-import static org.junit.Assert.*;
 
-import java.sql.Connection;
+
+import static org.junit.Assert.*;
 
 
 public class Sql2oHeroDaoTest {
@@ -19,7 +19,7 @@ public class Sql2oHeroDaoTest {
         String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
         Sql2o sql2o = new Sql2o(connectionString,"","");
         heroDao = new Sql2oHeroDao(sql2o);
-        con = (Connection) sql2o.open();
+        con =  sql2o.open();
 
     }
 
@@ -32,7 +32,9 @@ public class Sql2oHeroDaoTest {
     public void addingHeroSetsId() throws Exception {
         Individual_Hero hero = new Individual_Hero("Superman",12);
         heroDao.add(hero);
-        Individual_Hero foundHero = heroDao.findById(hero.getid());
+
+        Individual_Hero foundHero = heroDao.findById(hero.getId());
         assertEquals(hero, foundHero);
     }
+
 }
