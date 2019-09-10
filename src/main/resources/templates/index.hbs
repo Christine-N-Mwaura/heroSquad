@@ -1,9 +1,40 @@
 {{#partial "content"}}
-    <div class="container">
+    <div class="container text-center text-white">
         <div class="page-header">
-            <h1>Welcome to hero squad!! </h1>
-            <h5><a href="/heroes/new">Add new hero</a></h5>
+            <h1 class="text-center">Welcome to hero squad!! </h1>
         </div>
+
+       <div class="row">
+          <div class="col-md-6 pt-5">
+        <h2>Current Squads:</h2>
+      {{#if squads}}
+            {{#each squads}}
+
+
+                <p><a href="/squads/{{id}}"> <button type="submit" class="btn btn-success"> Squad details...</button></a></p>
+
+            {{/each}}
+        {{else}}
+            <p>No Squads!</p>
+        {{/if}}
+
+          </div>
+
+<div class="col-md-6 pt-5">
+        <h2>Current heroes:</h2>
+
+        {{#if heroes}}
+            {{#each heroes}}
+                <p>Hero:</p>
+                <p><a href="/heroes/{{id}}"> <button type="submit" class="btn btn-success"> Hero details...</button></a></p>
+
+            {{/each}}
+        {{else}}
+            <p>No heroes added!</p>
+
+        {{/if}}
+            </div>
+       </div>
     </div>
 {{/partial}}
 

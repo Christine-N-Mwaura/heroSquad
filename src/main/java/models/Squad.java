@@ -39,7 +39,7 @@ public class Squad {
     }
 
     public static Squad findById(int id){
-        return instances.get(id - 1);
+        return instances.get(id-1);
     }
 
     public static List <Squad> all(){
