@@ -16,8 +16,9 @@ The applications allow users to do the following:
 
 ## Project Setup
 * Make sure all requirements for running java applications are installed;JUnit, Intellij,SDK,JDK.
-* Clone the project to your local machine from https://github.com/Christine-N-Mwaura/heroSquad.git.
-* Run javac heroSquad.java to compile and java heroSquad to run the program
+* Clone the project to your local machine from https://github.com/Christine-N-Mwaura/heroSquad.git. 
+* To view the site visit https://herosquad154.herokuapp.com/.
+* Run gradle run to compile and java heroSquad to run the program.
  
  
  
