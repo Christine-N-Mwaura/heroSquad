@@ -1,9 +1,9 @@
-# Ceaser Cipher
+# Hero Squad
 
 ##### By Christine Njeri
 
 ## Description
-This application allows the user to enter a text and a shift key and get the ceaser cipher encryption or decryption depending on their choice.
+This application allows the user to add a hero and a squad and view them in the current session.
 
 
 ## User Requirements
@@ -27,6 +27,8 @@ The applications allow users to do the following:
 * Junit
 * Java
 * SDK
+* spark
+
 
 ## Contact Details
 For further information contact me at njerimwaura25@gmail.com
